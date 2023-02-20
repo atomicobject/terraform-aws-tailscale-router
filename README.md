@@ -28,7 +28,7 @@ Pick a name (this will be used for many things, including the ECS cluster that w
 
 ```
 module "router" {
-  source = "../"
+  source = "atomicobject/tailscale-router/aws"
 
   name               = "tailscale-subnet-router"
   tailscale_auth_key = var.tailscale_auth_key
@@ -64,4 +64,4 @@ Yes, but if you are deploying your own VPC as part of the same configuration, de
 
 ## Thanks
 
-Thanks to David Norton for writing [Run a Tailscale VPN relay on ECS/Fargate](https://platformers.dev/log/2022/tailscale-ecs/), which inspired this module. Today, we're able to create containers based on [the official Tailscale image](https://hub.docker.com/r/tailscale/tailscale) instead of having to create our own images.
+Thanks to David Norton for writing [Run a Tailscale VPN relay on ECS/Fargate](https://platformers.dev/log/2022/tailscale-ecs/), which inspired this module. Today, we're able to create containers based on the unmodified [official Tailscale image](https://hub.docker.com/r/tailscale/tailscale) instead of having to create our own images, which simplifies this process quite a bit.
