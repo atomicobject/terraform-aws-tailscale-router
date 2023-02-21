@@ -1,3 +1,9 @@
+variable "additional_routes" {
+  type        = list(string)
+  description = "additional routes to advertise (e.g. \"8.8.8.8/32\")"
+  default     = []
+}
+
 variable "name" {
   type        = string
   description = "name for the subnet router and associated resources"

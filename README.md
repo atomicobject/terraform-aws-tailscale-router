@@ -28,7 +28,8 @@ Pick a name (this will be used for many things, including the ECS cluster that w
 
 ```
 module "router" {
-  source = "atomicobject/tailscale-router/aws"
+  source  = "atomicobject/tailscale-router/aws"
+  version = ">= 1.1.0, < 2.0.0"
 
   name               = "tailscale-subnet-router"
   tailscale_auth_key = var.tailscale_auth_key
@@ -55,6 +56,12 @@ Deploying into other VPCs is also relatively straightforward; you just need the 
 Depending on your setup, you may also need to launch your router into different security groups. The default security group AWS created allows traffic only from itself, so using it for the router will allow access to anything else in that security group.
 
 If you want to use different security groups, you'll have to make sure there are appropriate ingress rules to support the router.
+
+**NEW in v1.1.0:** You can ask Tailscale to advertise additional routes beyond the VPC (for example, if you want to [route specific Internet hosts though the subnet router](https://tailscale.com/kb/1059/ip-blocklist-relays/#using-tailscale-to-improve-on-ip-block-lists)). Just use the "additional_routes" variable:
+
+```
+additional_routes = ["8.8.8.8/32", "8.8.4.4/32"]
+```
 
 ## Q&A
 

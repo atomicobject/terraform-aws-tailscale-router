@@ -24,7 +24,7 @@ variable "tailscale_auth_key" {
 
 module "router" {
   source  = "atomicobject/tailscale-router/aws"
-  version = ">= 1.0.0, < 2.0.0"
+  version = ">= 1.1.0, < 2.0.0"
 
   name               = "tailscale-subnet-router"
   tailscale_auth_key = var.tailscale_auth_key

@@ -68,6 +68,10 @@ resource "aws_iam_role_policy" "task" {
   )
 }
 
+locals {
+  vpc_routes = [for a in data.aws_vpc.specified.cidr_block_associations : a.cidr_block]
+}
+
 resource "aws_ecs_task_definition" "default" {
   family = var.name
 
@@ -97,7 +101,7 @@ resource "aws_ecs_task_definition" "default" {
           },
           {
             name  = "TS_ROUTES"
-            value = join(" ", [for a in data.aws_vpc.specified.cidr_block_associations : a.cidr_block])
+            value = join(",", concat(local.vpc_routes, var.additional_routes))
           },
           {
             name  = "TS_USERSPACE"
