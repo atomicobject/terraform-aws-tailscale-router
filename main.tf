@@ -79,7 +79,7 @@ resource "aws_ecs_task_definition" "default" {
     [
       {
         name  = var.name
-        image = "tailscale/tailscale:v1.36.1"
+        image = "tailscale/tailscale:v${var.tailscale_version}"
 
         linuxParameters = {
           initProcessEnabled = true
