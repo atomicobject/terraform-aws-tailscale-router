@@ -2,6 +2,8 @@
 
 Puts a [Tailscale](https://tailscale.com/) [subnet router](https://tailscale.com/kb/1019/subnets/), running on AWS in an [ECS](https://aws.amazon.com/ecs/) container, into your [VPC](https://aws.amazon.com/vpc/) with minimal configuration.
 
+You can read more about this module in ["Get VPN access into your AWS VPC with Tailscale"](https://spin.atomicobject.com/2023/03/16/aws-vpc-tailscale/) at [Atomic Spin](https://spin.atomicobject.com/).
+
 ## Quick start
 
 If you just want to deploy into the default VPC and default security group, data sources can get you everything you need save the [auth key](#getting-an-auth-key):
