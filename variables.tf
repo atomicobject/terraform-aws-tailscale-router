@@ -28,7 +28,7 @@ variable "tailscale_auth_key" {
 variable "tailscale_version" {
   type        = string
   description = "Tailscale version to deploy"
-  default     = "1.38.4"
+  default     = "1.44.0"
 }
 
 variable "vpc_id" {

@@ -31,7 +31,7 @@ Pick a name (this will be used for many things, including the ECS cluster that w
 ```
 module "router" {
   source  = "atomicobject/tailscale-router/aws"
-  version = ">= 1.1.0, < 2.0.0"
+  version = ">= 1.1.4, < 2.0.0"
 
   name               = "tailscale-subnet-router"
   tailscale_auth_key = var.tailscale_auth_key
